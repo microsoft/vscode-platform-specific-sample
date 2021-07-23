@@ -1,14 +1,10 @@
-# Project
+# vscode-platform-specific-sample README
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+[![CI](https://github.com/joaomoreno/vscode-platform-specific-sample/actions/workflows/ci.yml/badge.svg)](https://github.com/joaomoreno/vscode-platform-specific-sample/actions/workflows/ci.yml)
 
-As the maintainer of this project, please make a few updates:
+This is an example platform-specific VS Code extension. It exposes a single command `Get Ripgrep version`, which pops up a notification containing the version of the bundled [ripgrep](https://github.com/BurntSushi/ripgrep) executable. It bundles the ripgrep executable by depending on [vscode-ripgrep](https://github.com/microsoft/vscode-ripgrep), which contains the platform-specific ripgrep executable.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+The [CI script](https://github.com/joaomoreno/vscode-platform-specific-sample/actions/workflows/ci.yml) makes sure VSIXs for all supported VS Code targets are built in an automated fashion. [Once built](https://github.com/joaomoreno/vscode-platform-specific-sample/actions/runs/1059108370), each VSIX should be available as a build artifact. Furthermore, if a tag (eg `v1.0.0`) is pushed to the repo, an additional build stage will collect all built VSIX files and publish them accordingly to the VS Marketplace using the new `--target` [vsce](https://github.com/microsoft/vscode-vsce) flag.
 
 ## Contributing
 
