@@ -80,4 +80,5 @@ jobs:
             npx vsce publish --packagePath $vsix -t $target
           done
         env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          VSCE_PAT: ${{ secrets.VSCE_PAT_PPE }}
+          VSCE_MARKETPLACE_URL: https://marketplace.vsallin.net/
