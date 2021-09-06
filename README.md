@@ -1,10 +1,10 @@
 # vscode-platform-specific-sample README
 
-[![CI](https://github.com/joaomoreno/vscode-platform-specific-sample/actions/workflows/ci.yml/badge.svg)](https://github.com/joaomoreno/vscode-platform-specific-sample/actions/workflows/ci.yml)
+[![CI](https://github.com/microsoft/vscode-platform-specific-sample/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/vscode-platform-specific-sample/actions/workflows/ci.yml)
 
 This is an example platform-specific VS Code extension. It exposes a single command `Get Ripgrep version`, which pops up a notification containing the version of the bundled [ripgrep](https://github.com/BurntSushi/ripgrep) executable. It bundles the ripgrep executable by depending on [vscode-ripgrep](https://github.com/microsoft/vscode-ripgrep), which contains the platform-specific ripgrep executable.
 
-The [CI script](https://github.com/joaomoreno/vscode-platform-specific-sample/actions/workflows/ci.yml) makes sure VSIXs for all supported VS Code targets are built in an automated fashion. [Once built](https://github.com/joaomoreno/vscode-platform-specific-sample/actions/runs/1059108370), each VSIX should be available as a build artifact. Furthermore, if a tag (eg `v1.0.0`) is pushed to the repo, an additional build stage will collect all built VSIX files and publish them accordingly to the VS Marketplace using the new `--target` [vsce](https://github.com/microsoft/vscode-vsce) flag.
+The [CI script](https://github.com/microsoft/vscode-platform-specific-sample/actions/workflows/ci.yml) makes sure VSIXs for all supported VS Code targets are built in an automated fashion. [Once built](https://github.com/microsoft/vscode-platform-specific-sample/actions/runs/1059200691), each VSIX should be available as a build artifact. Furthermore, if a tag (eg `v1.0.0`) is pushed to the repo, an additional build stage will collect all built VSIX files and publish them accordingly to the VS Marketplace using the new `--target` [vsce](https://github.com/microsoft/vscode-vsce) flag.
 
 ## Contributing
 
