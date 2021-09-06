@@ -63,10 +63,7 @@ jobs:
           npm_config_arch: ${{ matrix.npm_config_arch }}
       - shell: pwsh
         run: |
-          case "${{ matrix.arch }}" in
-            web) echo "target=web" >> $env:GITHUB_ENV ;;
-            *) echo "target=${{ matrix.platform }}-${{ matrix.arch }}" >> $env:GITHUB_ENV ;;
-          esac
+          echo "target=$(if ("${{ matrix.arch }}" -eq "web") { "web" } else { "${{ matrix.platform }}-${{ matrix.arch }}" })" >> $env:GITHUB_ENV
           echo "version=$((Get-Content .\package.json | ConvertFrom-Json).version)" >> $env:GITHUB_ENV
       - run: npx vsce package -o vscode-platform-specific-sample-${{ env.target }}-${{ env.version }}.vsix --target ${{ env.target }}
       - uses: actions/upload-artifact@v2
