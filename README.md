@@ -1,6 +1,7 @@
 # vscode-platform-specific-sample README
 
-[![CI](https://github.com/microsoft/vscode-platform-specific-sample/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/vscode-platform-specific-sample/actions/workflows/ci.yml)
+[![CI](https://github.com/microsoft/vscode-platform-specific-sample/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/vscode-platform-specific-sample/actions/workflows/ci.yml) 
+[![CI](https://badgen.net/vs-marketplace/v/joaomoreno.vscode-platform-specific-sample)](https://marketplace.visualstudio.com/items?itemName=joaomoreno.vscode-platform-specific-sample)
 
 This is an example platform-specific VS Code extension. It exposes a single command `Get Ripgrep version`, which pops up a notification containing the version of the bundled [ripgrep](https://github.com/BurntSushi/ripgrep) executable. It bundles the ripgrep executable by depending on [vscode-ripgrep](https://github.com/microsoft/vscode-ripgrep), which contains the platform-specific ripgrep executable.
 
