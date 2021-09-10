@@ -18,7 +18,6 @@
 		"onCommand:vscode-platform-specific-sample.run"
 	],
 	"main": "./extension.js",
-	"browser": "./extension-web.js",
 	"contributes": {
 		"commands": [
 			{

@@ -47,10 +47,6 @@ jobs:
             platform: darwin
             arch: arm64
             npm_config_arch: arm64
-          - os: ubuntu-latest
-            platform: linux
-            arch: web
-            npm_config_arch: x64
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -62,7 +58,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           npm_config_arch: ${{ matrix.npm_config_arch }}
       - shell: pwsh
-        run: echo "target=$(if ("${{ matrix.arch }}" -eq "web") { "web" } else { "${{ matrix.platform }}-${{ matrix.arch }}" })" >> $env:GITHUB_ENV
+        run: echo "target=${{ matrix.platform }}-${{ matrix.arch }}" >> $env:GITHUB_ENV
       - run: npx vsce package --target ${{ env.target }}
       - uses: actions/upload-artifact@v2
         with:
