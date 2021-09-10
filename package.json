@@ -1,6 +1,6 @@
 {
 	"name": "vscode-platform-specific-sample",
-	"displayName": "vscode-platform-specific-sample",
+	"displayName": "Platform Specific Sample",
 	"description": "VS Code platform specific extension sample",
 	"publisher": "joaomoreno",
 	"repository": {

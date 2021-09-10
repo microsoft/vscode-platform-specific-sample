@@ -1,4 +1,4 @@
-# vscode-platform-specific-sample README
+# VS Code Platform Specific Extension Sample
 
 [![CI](https://github.com/microsoft/vscode-platform-specific-sample/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/vscode-platform-specific-sample/actions/workflows/ci.yml) 
 [![CI](https://badgen.net/vs-marketplace/v/joaomoreno.vscode-platform-specific-sample)](https://marketplace.visualstudio.com/items?itemName=joaomoreno.vscode-platform-specific-sample)
