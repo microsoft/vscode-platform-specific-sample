@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "https://github.com/microsoft/vscode-platform-specific-sample"
 	},
-	"version": "1.14.0",
+	"version": "1.15.0",
 	"engines": {
 		"vscode": "^1.58.0"
 	},
