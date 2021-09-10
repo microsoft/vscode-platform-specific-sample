@@ -63,7 +63,7 @@ jobs:
           npm_config_arch: ${{ matrix.npm_config_arch }}
       - shell: pwsh
         run: echo "target=$(if ("${{ matrix.arch }}" -eq "web") { "web" } else { "${{ matrix.platform }}-${{ matrix.arch }}" })" >> $env:GITHUB_ENV
-      - run: npx vsce package --target ${{ env.target }}
+      - run: npx vsce@v1.98.0-alpha.0 package --target ${{ env.target }}
       - uses: actions/upload-artifact@v2
         with:
           name: vscode-platform-specific-sample-${{ env.target }}
@@ -75,8 +75,6 @@ jobs:
     if: success() && startsWith( github.ref, 'refs/tags/')
     steps:
       - uses: actions/download-artifact@v2
-      - run: |
-          npm i -g vsce@v1.98.0-alpha.0
-          npx vsce publish -i *.vsix
+      - run: npx vsce@v1.98.0-alpha.0 publish -i *.vsix
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
