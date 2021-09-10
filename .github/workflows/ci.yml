@@ -62,10 +62,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           npm_config_arch: ${{ matrix.npm_config_arch }}
       - shell: pwsh
-        run: |
-          echo "target=$(if ("${{ matrix.arch }}" -eq "web") { "web" } else { "${{ matrix.platform }}-${{ matrix.arch }}" })" >> $env:GITHUB_ENV
-          echo "version=$((Get-Content .\package.json | ConvertFrom-Json).version)" >> $env:GITHUB_ENV
-      - run: npx vsce package -o vscode-platform-specific-sample-${{ env.target }}-${{ env.version }}.vsix --target ${{ env.target }}
+        run: echo "target=$(if ("${{ matrix.arch }}" -eq "web") { "web" } else { "${{ matrix.platform }}-${{ matrix.arch }}" })" >> $env:GITHUB_ENV
+      - run: npx vsce package --target ${{ env.target }}
       - uses: actions/upload-artifact@v2
         with:
           name: vscode-platform-specific-sample-${{ env.target }}
@@ -78,10 +76,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
       - run: |
-          npm i -g vsce
-          for vsix in $(find . -iname *.vsix); do
-            target=$(echo $vsix | cut -d'-' -f 5,6 | cut -d'/' -f 1)
-            npx vsce publish --packagePath $vsix -t $target
-          done
+          npm i -g vsce@v1.98.0-alpha.0
+          npx vsce publish -i *.vsix
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
