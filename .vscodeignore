@@ -8,4 +8,4 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 .github
 node_modules
-!node_modules/vscode-ripgrep
+!node_modules/@vscode/ripgrep
