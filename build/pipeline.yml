@@ -23,8 +23,39 @@ parameters:
 extends:
   template: azure-pipelines/extension/stable.yml@templates
   parameters:
+    buildPlatforms:
+      - name: Linux
+        vsceTarget: linux-alpine
+        npmConfigArch: x64
+      - name: Linux
+        vsceTarget: linux-arm64
+        npmConfigArch: arm64
+      - name: Linux
+        vsceTarget: linux-armhf
+        npmConfigArch: arm
+      - name: Linux
+        vsceTarget: linux-x64
+        npmConfigArch: x64
+      - name: MacOS
+        vsceTarget: darwin-arm64
+        npmConfigArch: arm64
+      - name: MacOS
+        vsceTarget: darwin-x64
+        npmConfigArch: x64
+      - name: Windows
+        vsceTarget: win32-arm64
+        npmConfigArch: arm
+      - name: Windows
+        vsceTarget: win32-ia32
+        npmConfigArch: ia32
+      - name: Windows
+        vsceTarget: win32-x64
+        npmConfigArch: x64
+
     buildSteps:
       - script: npm ci
+        env:
+          npm_config_arch: ${{ parameters.npmConfigArch }}
         displayName: Install dependencies
     
     publishExtension: ${{ parameters.publishExtension }}
