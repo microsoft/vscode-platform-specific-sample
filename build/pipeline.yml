@@ -25,37 +25,39 @@ extends:
   parameters:
     buildPlatforms:
       - name: Linux
+        vsceTarget: ''
+      - name: Linux
+        packageArch: x64
         vsceTarget: linux-alpine
-        npmConfigArch: x64
       - name: Linux
+        packageArch: arm64
         vsceTarget: linux-arm64
-        npmConfigArch: arm64
       - name: Linux
+        packageArch: arm
         vsceTarget: linux-armhf
-        npmConfigArch: arm
       - name: Linux
+        packageArch: x64
         vsceTarget: linux-x64
-        npmConfigArch: x64
       - name: MacOS
+        packageArch: arm64
         vsceTarget: darwin-arm64
-        npmConfigArch: arm64
       - name: MacOS
+        packageArch: x64
         vsceTarget: darwin-x64
-        npmConfigArch: x64
       - name: Windows
+        packageArch: arm
         vsceTarget: win32-arm64
-        npmConfigArch: arm
       - name: Windows
+        packageArch: ia32
         vsceTarget: win32-ia32
-        npmConfigArch: ia32
       - name: Windows
+        packageArch: x64
         vsceTarget: win32-x64
-        npmConfigArch: x64
 
     buildSteps:
       - script: npm ci
         env:
-          npm_config_arch: ${{ parameters.npmConfigArch }}
+          npm_config_arch: ${{ parameters.packageArch }}
         displayName: Install dependencies
-    
+
     publishExtension: ${{ parameters.publishExtension }}
