@@ -57,7 +57,7 @@ extends:
     buildSteps:
       - script: npm ci
         env:
-          npm_config_arch: ${{ parameters.packageArch }}
+          npm_config_arch: ${{ variables.packageArch }}
         displayName: Install dependencies
 
     publishExtension: ${{ parameters.publishExtension }}
