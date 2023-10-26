@@ -48,9 +48,6 @@ extends:
         packageArch: arm
         vsceTarget: win32-arm64
       - name: Windows
-        packageArch: ia32
-        vsceTarget: win32-ia32
-      - name: Windows
         packageArch: x64
         vsceTarget: win32-x64
 
