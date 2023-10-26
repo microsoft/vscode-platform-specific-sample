@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const { rgPath } = require('vscode-ripgrep');
+const { rgPath } = require('@vscode/ripgrep');
 const cp = require('child_process');
 const { promisify } = require('util');
 const execFile = promisify(cp.execFile);
