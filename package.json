@@ -26,13 +26,11 @@
 			}
 		]
 	},
-	"scripts": {
-		"lint": "eslint ."
-	},
 	"devDependencies": {
-		"@types/vscode": "^1.58.0"
+		"@types/vscode": "~1.61.0",
+		"@vscode/vsce": "^3.4.2"
 	},
 	"dependencies": {
-		"vscode-ripgrep": "^1.12.0"
+		"@vscode/ripgrep": "^1.15.11"
 	}
 }

@@ -9,4 +9,4 @@ vsc-extension-quickstart.md
 .github
 build/**
 node_modules
-!node_modules/vscode-ripgrep
+!node_modules/@vscode/ripgrep
