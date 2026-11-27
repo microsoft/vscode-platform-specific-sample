@@ -56,6 +56,8 @@ jobs:
         with:
           node-version: 22.x
       - run: npm install
+        # Keep PowerShell 7's module path out of ripgrep's Windows PowerShell installer.
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           npm_config_arch: ${{ matrix.npm_config_arch }}
